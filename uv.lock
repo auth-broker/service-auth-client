@@ -430,12 +430,12 @@ wheels = [
 ]
 
 [[package]]
-name = "obo-auth-client"
+name = "ab-auth-client"
 version = "0.1.0"
-source = { editable = "../../obo_core/obo-auth-client" }
+source = { editable = "../../ab_core/ab-auth-client" }
 dependencies = [
-    { name = "obo-cache" },
-    { name = "obo-pkce" },
+    { name = "ab-cache" },
+    { name = "ab-pkce" },
     { name = "pydantic" },
     { name = "requests" },
     { name = "yarl" },
@@ -443,8 +443,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "obo-cache", editable = "../../obo_core/obo-cache" },
-    { name = "obo-pkce", editable = "../../obo_core/obo-pkce" },
+    { name = "ab-cache", editable = "../../ab_core/ab-cache" },
+    { name = "ab-pkce", editable = "../../ab_core/ab-pkce" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "requests", specifier = ">=2.32.4,<3" },
     { name = "yarl", specifier = ">=1.20.1,<2" },
@@ -454,7 +454,7 @@ requires-dist = [
 dev = [
     { name = "debugpy", specifier = ">=1.8.14,<2" },
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -464,13 +464,13 @@ dev = [
 ]
 
 [[package]]
-name = "obo-auth-client-service"
+name = "ab-auth-client-service"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
-    { name = "obo-auth-client" },
-    { name = "obo-cache" },
+    { name = "ab-auth-client" },
+    { name = "ab-cache" },
     { name = "pydantic" },
     { name = "uvicorn" },
 ]
@@ -479,7 +479,7 @@ dependencies = [
 dev = [
     { name = "debugpy" },
     { name = "isort" },
-    { name = "obo-test-fixtures" },
+    { name = "ab-test-fixtures" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
@@ -491,8 +491,8 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },
-    { name = "obo-auth-client", editable = "../../obo_core/obo-auth-client" },
-    { name = "obo-cache", editable = "../../obo_core/obo-cache" },
+    { name = "ab-auth-client", editable = "../../ab_core/ab-auth-client" },
+    { name = "ab-cache", editable = "../../ab_core/ab-cache" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "uvicorn", specifier = ">=0.35.0,<0.36" },
 ]
@@ -501,7 +501,7 @@ requires-dist = [
 dev = [
     { name = "debugpy", specifier = ">=1.8.14,<2" },
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -511,12 +511,12 @@ dev = [
 ]
 
 [[package]]
-name = "obo-cache"
+name = "ab-cache"
 version = "0.1.0"
-source = { editable = "../../obo_core/obo-cache" }
+source = { editable = "../../ab_core/ab-cache" }
 dependencies = [
     { name = "diskcache" },
-    { name = "obo-dependency" },
+    { name = "ab-dependency" },
     { name = "orjson" },
     { name = "pydantic" },
     { name = "slugify" },
@@ -527,7 +527,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "diskcache", specifier = ">=5.6.3,<6" },
-    { name = "obo-dependency", editable = "../../obo_core/obo-dependency" },
+    { name = "ab-dependency", editable = "../../ab_core/ab-dependency" },
     { name = "orjson", specifier = ">=3.11.2,<4" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "redis", marker = "extra == 'all'", specifier = ">=6.4.0,<7" },
@@ -543,7 +543,7 @@ provides-extras = ["all", "redis-async", "redis-sync"]
 dev = [
     { name = "debugpy", specifier = ">=1.8.14,<2" },
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -553,11 +553,11 @@ dev = [
 ]
 
 [[package]]
-name = "obo-database"
+name = "ab-database"
 version = "0.1.0"
-source = { editable = "../../obo_core/obo-database" }
+source = { editable = "../../ab_core/ab-database" }
 dependencies = [
-    { name = "obo-dependency" },
+    { name = "ab-dependency" },
     { name = "pydantic" },
     { name = "slugify" },
     { name = "sqlmodel" },
@@ -598,7 +598,7 @@ requires-dist = [
     { name = "mariadb", marker = "extra == 'mariadb-sync'", specifier = ">=1.1.12,<2" },
     { name = "mysqlclient", marker = "extra == 'all'", specifier = ">=2.2.7,<3" },
     { name = "mysqlclient", marker = "extra == 'mysql-sync'", specifier = ">=2.2.7,<3" },
-    { name = "obo-dependency", editable = "../../obo_core/obo-dependency" },
+    { name = "ab-dependency", editable = "../../ab_core/ab-dependency" },
     { name = "oracledb", marker = "extra == 'all'", specifier = ">=3.1.1,<4" },
     { name = "oracledb", marker = "extra == 'oracle-sync'", specifier = ">=3.1.1,<4" },
     { name = "psycopg2", marker = "extra == 'all'", specifier = ">=2.9.10,<3" },
@@ -627,7 +627,7 @@ provides-extras = ["all", "clickhouse-async", "clickhouse-sync", "cockroach-sync
 [package.metadata.requires-dev]
 dev = [
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -637,9 +637,9 @@ dev = [
 ]
 
 [[package]]
-name = "obo-dependency"
+name = "ab-dependency"
 version = "0.1.0"
-source = { editable = "../../obo_core/obo-dependency" }
+source = { editable = "../../ab_core/ab-dependency" }
 dependencies = [
     { name = "deepdiff" },
     { name = "generic-preserver" },
@@ -662,7 +662,7 @@ dev = [
     { name = "fastapi", specifier = ">=0.78.0" },
     { name = "httpx", specifier = ">=0.28.1,<0.29" },
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -672,9 +672,9 @@ dev = [
 ]
 
 [[package]]
-name = "obo-pkce"
+name = "ab-pkce"
 version = "0.1.0"
-source = { editable = "../../obo_core/obo-pkce" }
+source = { editable = "../../ab_core/ab-pkce" }
 dependencies = [
     { name = "pydantic" },
 ]
@@ -685,7 +685,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.11.7,<3" }]
 [package.metadata.requires-dev]
 dev = [
     { name = "isort", specifier = ">=6.0.1,<7" },
-    { name = "obo-test-fixtures", editable = "../../obo_test/obo-test-fixtures" },
+    { name = "ab-test-fixtures", editable = "../../ab_test/ab-test-fixtures" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
     { name = "pytest", specifier = ">=8.4.1,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
@@ -695,20 +695,20 @@ dev = [
 ]
 
 [[package]]
-name = "obo-test-fixtures"
+name = "ab-test-fixtures"
 version = "0.1.0"
-source = { editable = "../../obo_test/obo-test-fixtures" }
+source = { editable = "../../ab_test/ab-test-fixtures" }
 dependencies = [
-    { name = "obo-cache" },
-    { name = "obo-database", extra = ["sqlite-async"] },
+    { name = "ab-cache" },
+    { name = "ab-database", extra = ["sqlite-async"] },
     { name = "pytest" },
     { name = "pytest-asyncio" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "obo-cache", editable = "../../obo_core/obo-cache" },
-    { name = "obo-database", extras = ["sqlite-async"], editable = "../../obo_core/obo-database" },
+    { name = "ab-cache", editable = "../../ab_core/ab-cache" },
+    { name = "ab-database", extras = ["sqlite-async"], editable = "../../ab_core/ab-database" },
     { name = "pytest", specifier = ">=8.4.0,<9" },
     { name = "pytest-asyncio", specifier = ">=1.0.0,<2" },
 ]

@@ -21,4 +21,4 @@ RUN uv sync
 
 # Default entrypoint for running FastAPI services
 ENTRYPOINT ["uv", "run", "uvicorn"]
-CMD ["obo_service.auth_client.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["ab_service.auth_client.main:app", "--host", "0.0.0.0", "--port", "8000"]

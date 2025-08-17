@@ -6,7 +6,7 @@ requires = ["hatchling"]
 dev = [
   "debugpy>=1.8.14,<2",
   "isort>=6.0.1,<7",
-  "obo-test-fixtures",
+  "ab-test-fixtures",
   "pre-commit>=4.2.0,<5",
   "pytest-asyncio>=1.0.0,<2",
   "pytest-cov>=6.2.1,<7",
@@ -19,25 +19,25 @@ dev = [
 authors = [{email = "53892067+mattcoulter7@users.noreply.github.com", name = "Matthew Coulter"}]
 dependencies = [
   "fastapi>=0.115.14,<0.116",
-  "obo-auth-client",
-  "obo-cache",
+  "ab-auth-client",
+  "ab-cache",
   "pydantic>=2.11.7,<3",
   "uvicorn>=0.35.0,<0.36"
 ]
 description = ""
-name = "obo-auth-client-service"
+name = "ab-auth-client-service"
 readme = "README.md"
 requires-python = ">=3.12, <4"
 version = "0.1.0"
 
 [tool.hatch.build.targets.sdist]
-include = ["src/obo_service"]
+include = ["src/ab_service"]
 
 [tool.hatch.build.targets.wheel]
-include = ["src/obo_service"]
+include = ["src/ab_service"]
 
 [tool.hatch.build.targets.wheel.sources]
-"src/obo_service" = "obo_service"
+"src/ab_service" = "ab_service"
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "session"
@@ -69,10 +69,3 @@ select = [
   "UP", # pyupgrade
   "W" # pycodestyle warnings
 ]
-
-[tool.uv]
-
-[tool.uv.sources]
-obo-auth-client = {editable = true, path = "../../obo_core/obo-auth-client"}
-obo-cache = {editable = true, path = "../../obo_core/obo-cache"}
-obo-test-fixtures = {editable = true, path = "../../obo_test/obo-test-fixtures"}

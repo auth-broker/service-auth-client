@@ -5,18 +5,18 @@ from typing import Annotated, Union
 
 from fastapi import APIRouter
 from fastapi import Depends as FDepends
-from obo_core.auth_client.oauth2.client import OAuth2Client
-from obo_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
-from obo_core.auth_client.oauth2.client.standard import StandardOAuth2Client
-from obo_core.auth_client.oauth2.schema.authorize import (
+from ab_core.auth_client.oauth2.client import OAuth2Client
+from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
+from ab_core.auth_client.oauth2.client.standard import StandardOAuth2Client
+from ab_core.auth_client.oauth2.schema.authorize import (
     OAuth2AuthorizeResponse,
     OAuth2BuildAuthorizeRequest,
     PKCEAuthorizeResponse,
     PKCEBuildAuthorizeRequest,
 )
-from obo_core.cache.caches.base import CacheSession
-from obo_core.cache.session_context import cache_session_sync  # your DI dep that yields a session
-from obo_core.dependency import Depends
+from ab_core.cache.caches.base import CacheSession
+from ab_core.cache.session_context import cache_session_sync  # your DI dep that yields a session
+from ab_core.dependency import Depends
 
 router = APIRouter(prefix="/login", tags=["Auth"])
 
