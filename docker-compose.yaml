@@ -1,0 +1,8 @@
+services:
+  package:
+    build: .
+    volumes:
+      - ./src:/package/src
+      - ./tests:/package/tests
+    ports:
+      - "8001:8000"
