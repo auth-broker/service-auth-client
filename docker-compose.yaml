@@ -5,4 +5,4 @@ services:
       - ./src:/package/src
       - ./tests:/package/tests
     ports:
-      - "8001:8000"
+      - "8000:8000"
