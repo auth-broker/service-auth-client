@@ -9,7 +9,9 @@
       "type": "debugpy",
       "request": "launch",
       "module": "pytest",
-      "args": ["-vv"],               // full suite, verbose
+      "args": [
+        "-vv"
+      ], // full suite, verbose
       "justMyCode": false,
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
@@ -21,7 +23,7 @@
       "module": "pytest",
       "args": [
         "-vv",
-        "${fileDirname}"             // every test in this directory / package
+        "${fileDirname}" // every test in this directory / package
       ],
       "justMyCode": false,
       "console": "integratedTerminal",
@@ -34,7 +36,7 @@
       "module": "pytest",
       "args": [
         "-vv",
-        "${relativeFile}"            // only the file you’re editing
+        "${relativeFile}" // only the file you’re editing
       ],
       "justMyCode": false,
       "console": "integratedTerminal",
@@ -47,7 +49,7 @@
       "module": "pytest",
       "args": [
         "-vv",
-        "${relativeFile}::${selectedText}"   // highlight or put caret on test name
+        "${relativeFile}::${selectedText}" // highlight or put caret on test name
       ],
       "justMyCode": false,
       "console": "integratedTerminal",
@@ -60,8 +62,10 @@
       "module": "uvicorn",
       "args": [
         "ab_service.auth_client.main:app",
-        "--host", "127.0.0.1",
-        "--port", "8000",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000",
         "--reload"
       ],
       "justMyCode": false,
