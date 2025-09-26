@@ -431,7 +431,7 @@ wheels = [
 
 [[package]]
 name = "ab-auth-client"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_core/ab-auth-client" }
 dependencies = [
     { name = "ab-cache" },
@@ -465,7 +465,7 @@ dev = [
 
 [[package]]
 name = "ab-auth-client-service"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
@@ -512,7 +512,7 @@ dev = [
 
 [[package]]
 name = "ab-cache"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_core/ab-cache" }
 dependencies = [
     { name = "diskcache" },
@@ -554,7 +554,7 @@ dev = [
 
 [[package]]
 name = "ab-database"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_core/ab-database" }
 dependencies = [
     { name = "ab-dependency" },
@@ -638,7 +638,7 @@ dev = [
 
 [[package]]
 name = "ab-dependency"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_core/ab-dependency" }
 dependencies = [
     { name = "deepdiff" },
@@ -673,7 +673,7 @@ dev = [
 
 [[package]]
 name = "ab-pkce"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_core/ab-pkce" }
 dependencies = [
     { name = "pydantic" },
@@ -696,7 +696,7 @@ dev = [
 
 [[package]]
 name = "ab-test-fixtures"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../../ab_test/ab-test-fixtures" }
 dependencies = [
     { name = "ab-cache" },
@@ -1213,7 +1213,7 @@ wheels = [
 
 [[package]]
 name = "uuid7"
-version = "0.1.0"
+version = "0.1.1"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/5c/19/7472bd526591e2192926247109dbf78692e709d3e56775792fec877a7720/uuid7-0.1.0.tar.gz", hash = "sha256:8c57aa32ee7456d3cc68c95c4530bc571646defac01895cfc73545449894a63c", size = 14052, upload-time = "2021-12-29T01:38:21.897Z" }
 wheels = [
