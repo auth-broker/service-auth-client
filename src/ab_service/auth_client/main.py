@@ -1,3 +1,5 @@
+"""Main application for the auth client service."""
+
 from fastapi import FastAPI
 
 from ab_service.auth_client.routes.callback import router as callback_router

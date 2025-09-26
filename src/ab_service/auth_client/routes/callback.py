@@ -1,9 +1,7 @@
-# app/auth/callback.py
-from __future__ import annotations
+"""Handle Login Callback."""
 
 from typing import Annotated
 
-from fastapi import APIRouter, Request
 from ab_core.auth_client.oauth2.client import OAuth2Client
 from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
 from ab_core.auth_client.oauth2.client.standard import StandardOAuth2Client
@@ -15,6 +13,7 @@ from ab_core.auth_client.oauth2.schema.token import OAuth2Token
 from ab_core.cache.caches.base import CacheSession
 from ab_core.cache.session_context import cache_session_sync
 from ab_core.dependency import Depends
+from fastapi import APIRouter, Request
 
 router = APIRouter(prefix="/callback", tags=["Auth"])
 
@@ -25,8 +24,8 @@ async def callback(
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
     cache_session: Annotated[CacheSession, Depends(cache_session_sync, persist=True)],
 ):
-    """
-    Exchange the authorization code for tokens using the full redirect URL.
+    """Exchange the authorization code for tokens using the full redirect URL.
+
     For PKCE, the verifier is auto-fetched from cache via `state` (or falls back to the verifier
     included in the /login response if the caller passes it back).
     """

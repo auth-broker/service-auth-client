@@ -1,10 +1,7 @@
-# app/auth/router.py
-from __future__ import annotations
+"""Generate login url."""
 
-from typing import Annotated, Union
+from typing import Annotated
 
-from fastapi import APIRouter
-from fastapi import Depends as FDepends
 from ab_core.auth_client.oauth2.client import OAuth2Client
 from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
 from ab_core.auth_client.oauth2.client.standard import StandardOAuth2Client
@@ -17,13 +14,15 @@ from ab_core.auth_client.oauth2.schema.authorize import (
 from ab_core.cache.caches.base import CacheSession
 from ab_core.cache.session_context import cache_session_sync  # your DI dep that yields a session
 from ab_core.dependency import Depends
+from fastapi import APIRouter
+from fastapi import Depends as FDepends
 
 router = APIRouter(prefix="/login", tags=["Auth"])
 
 
 @router.get(
     "",
-    response_model=Union[OAuth2AuthorizeResponse, PKCEAuthorizeResponse],
+    response_model=OAuth2AuthorizeResponse | PKCEAuthorizeResponse,
 )
 async def get_login_url(
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
@@ -33,8 +32,8 @@ async def get_login_url(
     response_type: str = "code",
     identity_provider: str | None = "Google",
 ):
-    """
-    Build an OIDC authorize URL (Standard or PKCE) using the shared auth client.
+    """Build an OIDC authorize URL (Standard or PKCE) using the shared auth client.
+
     If PKCE, a fresh verifier/challenge is generated and (optionally) persisted to cache keyed by `state`.
     """
     extra = {"identity_provider": identity_provider} if identity_provider else None
