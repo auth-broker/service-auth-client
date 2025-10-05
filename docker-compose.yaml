@@ -1,9 +1,7 @@
 services:
-  package:
+  service:
     build:
       context: .
-      secrets:
-        - github_token
     environment:
       O_AUTH2_CLIENT_TYPE: "${O_AUTH2_CLIENT_TYPE:-}"
       O_AUTH2_CLIENT_STANDARD_CONFIG_CLIENT_ID: "${O_AUTH2_CLIENT_STANDARD_CONFIG_CLIENT_ID:-}"
@@ -18,7 +16,3 @@ services:
       - ./tests:/package/tests
     ports:
       - "8000:80"
-
-secrets:
-  github_token:
-    environment: GITHUB_TOKEN

@@ -4,8 +4,8 @@ requires-python = ">=3.12, <4"
 
 [[package]]
 name = "ab-auth-client"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-auth-client?tag=0.1.1#266735e46f51d0317bfa18d4f1c871d758cb54d9" }
+version = "0.1.4"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
     { name = "ab-pkce" },
@@ -13,14 +13,19 @@ dependencies = [
     { name = "requests" },
     { name = "yarl" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/75/a8/d028f4ced93856989d5e9511771614ca593dae09e084d41998f70ec1d8fd/ab_auth_client-0.1.4.tar.gz", hash = "sha256:ba25bd86c21feff2a76c402f0be5969ab5cba1cbe6aec14c0e11508f9b40ec8e", size = 6636, upload-time = "2025-09-27T08:05:06.288Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/8d/9b865667a92d314313693d481649e73e404aadb4091a65ebfebe0e5b6c2d/ab_auth_client-0.1.4-py3-none-any.whl", hash = "sha256:e5999ea2c0c85c64b644a48f3484f9eb7863e41a73e4c7df5aad7a1681c05dfd", size = 8674, upload-time = "2025-09-27T08:05:04.779Z" },
+]
 
 [[package]]
 name = "ab-auth-client-service"
-version = "0.1.1"
+version = "0.1.4"
 source = { editable = "." }
 dependencies = [
     { name = "ab-auth-client" },
     { name = "ab-cache" },
+    { name = "ab-logging" },
     { name = "fastapi" },
     { name = "pydantic" },
     { name = "uvicorn" },
@@ -41,8 +46,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ab-auth-client", git = "https://github.com/auth-broker/package-auth-client?tag=0.1.1" },
-    { name = "ab-cache", git = "https://github.com/auth-broker/package-cache?tag=0.1.1" },
+    { name = "ab-auth-client", specifier = ">=0.1.3,<1" },
+    { name = "ab-cache", specifier = ">=0.1.3,<1" },
+    { name = "ab-logging", specifier = ">=0.1.2" },
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "uvicorn", specifier = ">=0.35.0,<0.36" },
@@ -50,7 +56,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "ab-test-fixtures", git = "https://github.com/auth-broker/package-test-fixtures?tag=0.1.1" },
+    { name = "ab-test-fixtures", specifier = ">=0.1.5,<1" },
     { name = "debugpy", specifier = ">=1.8.14,<2" },
     { name = "isort", specifier = ">=6.0.1,<7" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
@@ -63,8 +69,8 @@ dev = [
 
 [[package]]
 name = "ab-cache"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-cache?tag=0.1.1#f6574c5cfde4ad60a5d353e79c299f82732feeca" }
+version = "0.1.4"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-dependency" },
     { name = "diskcache" },
@@ -74,17 +80,25 @@ dependencies = [
     { name = "sqlmodel" },
     { name = "uuid7" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/44/a1/e3481048c2c746184e2e03dd33dd00666132d665620018c2b38ce5f047ae/ab_cache-0.1.4.tar.gz", hash = "sha256:a36dd41292e384e7fc4d822ab3c2176cf0985034c88f3a4f040bf38988e2cf21", size = 10251, upload-time = "2025-09-27T08:05:15.43Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/c7/255f0e381850d4c4dd500df01333ef567083910a87aab1a676c30f46a2e6/ab_cache-0.1.4-py3-none-any.whl", hash = "sha256:a544764267cb0d5cf7bb6ca2717213215546a3060b882d183ddf43cedfafab29", size = 13148, upload-time = "2025-09-27T08:05:14.225Z" },
+]
 
 [[package]]
 name = "ab-database"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-database?tag=0.1.1#1ddc51208d1ef2b8b1f6bba18134c15c2f473b84" }
+version = "0.2.2"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-dependency" },
     { name = "pydantic" },
     { name = "slugify" },
     { name = "sqlmodel" },
     { name = "uuid7" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/66/3b/5fdae03e70f2ebf98e04c3637b487223b590c530fc3b9f1745d61d0a6e48/ab_database-0.2.2.tar.gz", hash = "sha256:3805b043735b260685490efcfc532a04b59f6afc8d2befacf7b907136e46f311", size = 7051, upload-time = "2025-09-28T10:15:44.772Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7c/ce/8de110a64bd21f4ea7ce0d5639692c8a7d8883843496797e664bbca76b62/ab_database-0.2.2-py3-none-any.whl", hash = "sha256:b45481997b3b0a40f175e4fee8fe3097d531f3ebfb10b0f110d7aebfe5bcc566", size = 9933, upload-time = "2025-09-28T10:15:43.485Z" },
 ]
 
 [package.optional-dependencies]
@@ -94,32 +108,57 @@ sqlite-async = [
 
 [[package]]
 name = "ab-dependency"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-dependency?tag=0.1.1#98ca1287a591fad0b7135c588339a1f537d49d73" }
+version = "0.1.6"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "deepdiff" },
     { name = "generic-preserver" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/87/14/bb610a9bd8ec9ccbd6f152a2b0ab04fdb2c569a56307f6fe64a3fc208625/ab_dependency-0.1.6.tar.gz", hash = "sha256:71ebb81adf7f78644c23ae58338765d7334a65341882e39bb55d3828a58f9fc7", size = 15806, upload-time = "2025-09-28T06:05:41.26Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/67/a09d8568e8006e34f619d7b13f1191eacf89e3101ab438faf63a1c880748/ab_dependency-0.1.6-py3-none-any.whl", hash = "sha256:807714b00d89f3a9d020a71d1e332b6822859a38261891f96cfaf2940225a4af", size = 21172, upload-time = "2025-09-28T06:05:39.998Z" },
+]
+
+[[package]]
+name = "ab-logging"
+version = "0.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "rich" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9a/d8/b4a88949203d44ca317fd783dfea1d4542afd1fc7568d0c67db5477f7167/ab_logging-0.1.2.tar.gz", hash = "sha256:83b6a42fe83ae541ae0800963705d5cde10550d307c7c731526d5b05511a2530", size = 7180, upload-time = "2025-10-05T02:56:24.169Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e2/29/2a1acf52fa162c270a3c15da38c007e8567e6002b97b2122955986b7b741/ab_logging-0.1.2-py3-none-any.whl", hash = "sha256:6cbd499109963e068a4b2f87bd0add680834126fc3ce0d5842bae5c4994b5f61", size = 5666, upload-time = "2025-10-05T02:56:22.731Z" },
+]
 
 [[package]]
 name = "ab-pkce"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-pkce?tag=0.1.1#1b5a4eb5f6ad936266013858828d6d284fe40e8c" }
+version = "0.1.4"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/86/3e5a5e14078d18772cade2cb99b9c972a82ed7a9c5325bd44f49505cd0ca/ab_pkce-0.1.4.tar.gz", hash = "sha256:79d3e35ea8afe24e97e286080c2d71993bbc593341f66335b3a4aa6da67256e3", size = 4507, upload-time = "2025-09-27T08:04:56.846Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4e/47/d1728d500964a87fa2ecd124b31cd16fd29b3d4ee9f7243d2f85d5d1d4ce/ab_pkce-0.1.4-py3-none-any.whl", hash = "sha256:7464c51d319fa3537e046ec8aae51d02ad202158ca129ea12ab3c588a2c7107d", size = 4575, upload-time = "2025-09-27T08:04:55.497Z" },
 ]
 
 [[package]]
 name = "ab-test-fixtures"
-version = "0.1.1"
-source = { git = "https://github.com/auth-broker/package-test-fixtures?tag=0.1.1#a6b9721ea3ca2729046c2d8f54824dffa7b29fb3" }
+version = "0.1.5"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
     { name = "ab-database", extra = ["sqlite-async"] },
     { name = "pytest" },
     { name = "pytest-asyncio" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f1/ac/97c49fa8ea40f7d66a90645703d42682869e5b4f66f80a5fc5fccfb0fd1f/ab_test_fixtures-0.1.5.tar.gz", hash = "sha256:9c472b6768bec4ef165991d63858ffd0eeba2a0dccd892a1eae7dd8b681e7ced", size = 4371, upload-time = "2025-09-28T06:42:19.019Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/10/ee/0cfdf24fdf9638b530aae48034b93c73eda458843f3d814e6b18a4f39b23/ab_test_fixtures-0.1.5-py3-none-any.whl", hash = "sha256:b50a6b421cb025e86d0f7116fccedc50741e3d78be110ed1d571dbac7e352421", size = 3804, upload-time = "2025-09-28T06:42:17.818Z" },
 ]
 
 [[package]]
@@ -492,6 +531,27 @@ wheels = [
 ]
 
 [[package]]
+name = "markdown-it-py"
+version = "4.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mdurl" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz", hash = "sha256:cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3", size = 73070, upload-time = "2025-08-11T12:57:52.854Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl", hash = "sha256:87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147", size = 87321, upload-time = "2025-08-11T12:57:51.923Z" },
+]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba", size = 8729, upload-time = "2022-08-14T12:40:10.846Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z" },
+]
+
+[[package]]
 name = "multidict"
 version = "6.6.4"
 source = { registry = "https://pypi.org/simple" }
@@ -723,7 +783,7 @@ wheels = [
 
 [[package]]
 name = "pydantic"
-version = "2.11.9"
+version = "2.11.10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "annotated-types" },
@@ -731,9 +791,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "typing-inspection" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz", hash = "sha256:6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2", size = 788495, upload-time = "2025-09-13T11:26:39.325Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/54/ecab642b3bed45f7d5f59b38443dcb36ef50f85af192e6ece103dbfe9587/pydantic-2.11.10.tar.gz", hash = "sha256:dc280f0982fbda6c38fada4e476dc0a4f3aeaf9c6ad4c28df68a666ec3c61423", size = 788494, upload-time = "2025-10-04T10:40:41.338Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3e/d3/108f2006987c58e76691d5ae5d200dd3e0f532cb4e5fa3560751c3a1feba/pydantic-2.11.9-py3-none-any.whl", hash = "sha256:c42dd626f5cfc1c6950ce6205ea58c93efa406da65f479dcb4029d5934857da2", size = 444855, upload-time = "2025-09-13T11:26:36.909Z" },
+    { url = "https://files.pythonhosted.org/packages/bd/1f/73c53fcbfb0b5a78f91176df41945ca466e71e9d9d836e5c522abda39ee7/pydantic-2.11.10-py3-none-any.whl", hash = "sha256:802a655709d49bd004c31e865ef37da30b540786a46bfce02333e0e24b5fe29a", size = 444823, upload-time = "2025-10-04T10:40:39.055Z" },
 ]
 
 [[package]]
@@ -924,6 +984,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz", hash = "sha256:dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf", size = 134517, upload-time = "2025-08-18T20:46:02.573Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl", hash = "sha256:2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6", size = 64738, upload-time = "2025-08-18T20:46:00.542Z" },
+]
+
+[[package]]
+name = "rich"
+version = "14.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "markdown-it-py" },
+    { name = "pygments" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz", hash = "sha256:e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8", size = 224441, upload-time = "2025-07-25T07:32:58.125Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e3/30/3c4d035596d3cf444529e0b2953ad0466f6049528a879d27534700580395/rich-14.1.0-py3-none-any.whl", hash = "sha256:536f5f1785986d6dbdea3c75205c473f970777b4a0d6c6dd1b696aa05a3fa04f", size = 243368, upload-time = "2025-07-25T07:32:56.73Z" },
 ]
 
 [[package]]
