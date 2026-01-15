@@ -6,9 +6,8 @@ from ab_core.auth_client.oauth2.client import OAuth2Client
 from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
 from ab_core.auth_client.oauth2.client.standard import StandardOAuth2Client
 from ab_core.auth_client.oauth2.schema.authorize import (
-    OAuth2AuthorizeResponse,
+    AuthorizeResponse,
     OAuth2BuildAuthorizeRequest,
-    PKCEAuthorizeResponse,
     PKCEBuildAuthorizeRequest,
 )
 from ab_core.cache.caches.base import CacheSession
@@ -22,7 +21,7 @@ router = APIRouter(prefix="/login", tags=["Auth"])
 
 @router.get(
     "",
-    response_model=OAuth2AuthorizeResponse | PKCEAuthorizeResponse,
+    response_model=AuthorizeResponse,
 )
 async def get_login_url(
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],

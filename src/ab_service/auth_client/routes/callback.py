@@ -25,8 +25,9 @@ async def callback(
     request: Request,
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
     cache_session: Annotated[CacheSession, Depends(cache_session_sync, persist=True)],
+    redirect_url: str | None = None,
 ):
-    redirect_url = str(request.url)
+    redirect_url = redirect_url or str(request.url)
 
     if isinstance(auth_client, PKCEOAuth2Client):
         exch = PKCEExchangeFromRedirectUrlRequest(
