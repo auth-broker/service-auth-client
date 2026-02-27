@@ -4,7 +4,7 @@ requires-python = ">=3.12, <4"
 
 [[package]]
 name = "ab-auth-client"
-version = "0.1.13"
+version = "0.1.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
@@ -14,8 +14,9 @@ dependencies = [
     { name = "requests" },
     { name = "yarl" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/17/33/77ace512dd76f884325a5ec0adfc7da90a538c1e2fa1aff287fc21a19dc3/ab_auth_client-0.1.14.tar.gz", hash = "sha256:8955257ff44e8de1c79c2ca50ffb0e158fac0183ae80b7182201ba973c8ac996", size = 8715, upload-time = "2026-02-27T02:39:24.81Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b6/42/202bcc59e5954d8da6675802dcac5038ef7af9ff1b618607c92c68711e48/ab_auth_client-0.1.13-py3-none-any.whl", hash = "sha256:1733a87777b9047258ba0b712cd79cceec349425a68e9ac2880d57ccfe28e7dd", size = 10154, upload-time = "2026-01-15T04:11:13.818Z" },
+    { url = "https://files.pythonhosted.org/packages/c5/8c/963eacd6e4ab50b373e19871ffcb446c93db500d4552b23c7f4a67a274b0/ab_auth_client-0.1.14-py3-none-any.whl", hash = "sha256:49f3169e55a53f97ffa80f16457c0a22c673396ca35f3f0db6be43988d6143f1", size = 11967, upload-time = "2026-02-27T02:39:23.475Z" },
 ]
 
 [[package]]
@@ -46,7 +47,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ab-auth-client", specifier = ">=0.1.13,<0.2.0" },
+    { name = "ab-auth-client", specifier = ">=0.1.14,<0.2.0" },
     { name = "ab-cache", specifier = ">=0.1.3,<0.2.0" },
     { name = "ab-logging", specifier = ">=0.1.2,<0.2.0" },
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },
