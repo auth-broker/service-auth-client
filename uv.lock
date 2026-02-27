@@ -4,7 +4,7 @@ requires-python = ">=3.12, <4"
 
 [[package]]
 name = "ab-auth-client"
-version = "0.1.13"
+version = "0.1.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
@@ -14,13 +14,14 @@ dependencies = [
     { name = "requests" },
     { name = "yarl" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/17/33/77ace512dd76f884325a5ec0adfc7da90a538c1e2fa1aff287fc21a19dc3/ab_auth_client-0.1.14.tar.gz", hash = "sha256:8955257ff44e8de1c79c2ca50ffb0e158fac0183ae80b7182201ba973c8ac996", size = 8715, upload-time = "2026-02-27T02:39:24.81Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b6/42/202bcc59e5954d8da6675802dcac5038ef7af9ff1b618607c92c68711e48/ab_auth_client-0.1.13-py3-none-any.whl", hash = "sha256:1733a87777b9047258ba0b712cd79cceec349425a68e9ac2880d57ccfe28e7dd", size = 10154, upload-time = "2026-01-15T04:11:13.818Z" },
+    { url = "https://files.pythonhosted.org/packages/c5/8c/963eacd6e4ab50b373e19871ffcb446c93db500d4552b23c7f4a67a274b0/ab_auth_client-0.1.14-py3-none-any.whl", hash = "sha256:49f3169e55a53f97ffa80f16457c0a22c673396ca35f3f0db6be43988d6143f1", size = 11967, upload-time = "2026-02-27T02:39:23.475Z" },
 ]
 
 [[package]]
 name = "ab-auth-client-service"
-version = "0.2.2"
+version = "0.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "ab-auth-client" },
@@ -46,8 +47,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ab-auth-client", specifier = ">=0.1.13,<0.2.0" },
-    { name = "ab-cache", specifier = ">=0.1.3,<0.2.0" },
+    { name = "ab-auth-client", specifier = ">=0.1.14,<0.2.0" },
+    { name = "ab-cache", specifier = ">=0.1.9,<0.2.0" },
     { name = "ab-logging", specifier = ">=0.1.2,<0.2.0" },
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
@@ -69,7 +70,7 @@ dev = [
 
 [[package]]
 name = "ab-cache"
-version = "0.1.6"
+version = "0.1.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-dependency" },
@@ -80,9 +81,9 @@ dependencies = [
     { name = "sqlmodel" },
     { name = "uuid7" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b4/e3/5321b9303da5cb085c0cf3c7cc94e6f4bfcab6224d01007c2fa433a05306/ab_cache-0.1.6.tar.gz", hash = "sha256:616288d9c5072596334ec2e34439bb5ff238c0d17510818bd8e5fd1027fdc6d2", size = 10259, upload-time = "2026-01-11T04:43:36.575Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f9/89/1c67735e6ed3055c77fcd92fccdf927f06a841874b293243f22a8f9afc6d/ab_cache-0.1.9.tar.gz", hash = "sha256:af251a61f687c53f7b9e771221d3f2ac53b6d80203c06923aa47f156c9a73fb2", size = 10440, upload-time = "2026-02-27T03:34:26.018Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/88/03/217e5b2354af7e93cfb252a2084cc928f7f5209f70d64f59d3c6b25fed7c/ab_cache-0.1.6-py3-none-any.whl", hash = "sha256:cfc7bf05dc5f23e3ba7c30f40c230390beca01195d59a7c2b0bbc4afeb8474a1", size = 13156, upload-time = "2026-01-11T04:43:34.9Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/d4/f82fa2e3dea8e92410ef474a351d801dcd7ac47aa259ea19c92fbf25c4f8/ab_cache-0.1.9-py3-none-any.whl", hash = "sha256:03530c566c4b998d2f757f9045adb1caa80de90ef9d8db9d6a287f0659f139ec", size = 13296, upload-time = "2026-02-27T03:34:24.993Z" },
 ]
 
 [[package]]

@@ -10,10 +10,11 @@ from ab_core.auth_client.oauth2.schema.exchange import (
     PKCEExchangeFromRedirectUrlRequest,
 )
 from ab_core.auth_client.oauth2.schema.token import OAuth2TokenExposed
-from ab_core.cache.caches.base import CacheSession
-from ab_core.cache.session_context import cache_session_sync
+from ab_core.cache.caches.base import CacheAsyncSession
+from ab_core.cache.session_context import cache_session_async
 from ab_core.dependency import Depends
 from fastapi import APIRouter, Request
+from fastapi import Depends as FDepends
 from fastapi.encoders import jsonable_encoder
 from pydantic import SecretStr
 
@@ -24,7 +25,7 @@ router = APIRouter(prefix="/callback", tags=["Auth"])
 async def callback(
     request: Request,
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
-    cache_session: Annotated[CacheSession, Depends(cache_session_sync, persist=True)],
+    cache_session: Annotated[CacheAsyncSession, FDepends(cache_session_async)],
     redirect_url: str | None = None,
 ):
     redirect_url = redirect_url or str(request.url)
@@ -37,7 +38,7 @@ async def callback(
             code_verifier=None,
             delete_after=True,
         )
-        token = auth_client.exchange_from_redirect_url(exch, cache_session=cache_session)
+        token = await auth_client.exchange_from_redirect_url_async(exch, cache_session=cache_session)
 
     elif isinstance(auth_client, StandardOAuth2Client):
         exch = OAuth2ExchangeFromRedirectUrlRequest(
@@ -46,7 +47,7 @@ async def callback(
             expected_state=None,
             delete_after=True,
         )
-        token = auth_client.exchange_from_redirect_url(exch, cache_session=cache_session)
+        token = await auth_client.exchange_from_redirect_url_async(exch, cache_session=cache_session)
 
     else:
         raise TypeError(f"Unsupported OAuth2 client type: {type(auth_client).__name__}")
