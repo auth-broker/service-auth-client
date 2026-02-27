@@ -18,6 +18,7 @@ from fastapi import Depends as FDepends
 
 router = APIRouter(prefix="/login", tags=["Auth"])
 
+
 @router.get("", response_model=AuthorizeResponse)
 async def get_login_url(
     request: Request,
@@ -52,7 +53,7 @@ async def get_login_url(
             extra_params=extra,
             app_context=app_context,
         )
-    
+
     else:
         raise TypeError(f"Unsupported OAuth2 client type: {type(auth_client).__name__}")
 
