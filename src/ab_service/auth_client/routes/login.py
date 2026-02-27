@@ -1,6 +1,6 @@
-"""Generate login url."""
+"""Generate login url (POST with explicit app_context)."""
 
-from typing import Annotated
+from typing import Annotated, Any
 
 from ab_core.auth_client.oauth2.client import OAuth2Client
 from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
@@ -13,45 +13,49 @@ from ab_core.auth_client.oauth2.schema.authorize import (
 from ab_core.cache.caches.base import CacheAsyncSession
 from ab_core.cache.session_context import cache_session_async  # your DI dep that yields a session
 from ab_core.dependency import Depends
-from fastapi import APIRouter, Request
+from fastapi import APIRouter
 from fastapi import Depends as FDepends
+from pydantic import BaseModel, Field
 
 router = APIRouter(prefix="/login", tags=["Auth"])
 
 
-@router.get("", response_model=AuthorizeResponse)
+class LoginRequest(BaseModel):
+    scope: str = "openid email profile"
+    response_type: str = "code"
+    identity_provider: str | None = "Google"
+
+    # Explicit, documented, structured context for downstream use (e.g. return_to, tenant, etc.)
+    app_context: dict[str, Any] = Field(
+        default_factory=dict,
+        description="Opaque key/value context to carry through the auth flow (stored server-side).",
+        examples=[{"return_to": "/dashboard", "tenant": "acme"}],
+    )
+
+
+@router.post("", response_model=AuthorizeResponse)
 async def get_login_url(
-    request: Request,
+    request: LoginRequest,
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
     cache_session: Annotated[CacheAsyncSession, FDepends(cache_session_async)],
-    scope: str = "openid email profile",
-    response_type: str = "code",
-    identity_provider: str | None = "Google",
 ):
-    # Known keys you explicitly model in the signature
-    reserved_keys = {"scope", "response_type", "identity_provider"}
-
-    # Everything else becomes app_context (first value only)
-    qp = dict(request.query_params)
-    app_context = {k: v for k, v in qp.items() if k not in reserved_keys}
-
-    extra = {"identity_provider": identity_provider} if identity_provider else None
+    extra = {"identity_provider": request.identity_provider} if request.identity_provider else None
 
     if isinstance(auth_client, PKCEOAuth2Client):
         req = PKCEBuildAuthorizeRequest(
-            scope=scope,
-            response_type=response_type,
+            scope=request.scope,
+            response_type=request.response_type,
             extra_params=extra,
             pkce=None,
-            app_context=app_context,
+            app_context=request.app_context,
         )
 
     elif isinstance(auth_client, StandardOAuth2Client):
         req = OAuth2BuildAuthorizeRequest(
-            scope=scope,
-            response_type=response_type,
+            scope=request.scope,
+            response_type=request.response_type,
             extra_params=extra,
-            app_context=app_context,
+            app_context=request.app_context,
         )
 
     else:

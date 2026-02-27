@@ -14,6 +14,7 @@ from ab_core.cache.caches.base import CacheAsyncSession
 from ab_core.cache.session_context import cache_session_async
 from ab_core.dependency import Depends
 from fastapi import APIRouter, Request
+from fastapi import Depends as FDepends
 from fastapi.encoders import jsonable_encoder
 from pydantic import SecretStr
 
@@ -24,7 +25,7 @@ router = APIRouter(prefix="/callback", tags=["Auth"])
 async def callback(
     request: Request,
     auth_client: Annotated[OAuth2Client, Depends(OAuth2Client, persist=True)],
-    cache_session: Annotated[CacheAsyncSession, Depends(cache_session_async, persist=True)],
+    cache_session: Annotated[CacheAsyncSession, FDepends(cache_session_async)],
     redirect_url: str | None = None,
 ):
     redirect_url = redirect_url or str(request.url)
