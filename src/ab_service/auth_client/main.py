@@ -9,6 +9,7 @@ from fastapi import FastAPI
 
 from ab_service.auth_client.routes.callback import router as callback_router
 from ab_service.auth_client.routes.login import router as login_router
+from ab_service.auth_client.routes.refresh import router as refresh_router
 
 
 @inject
@@ -26,3 +27,4 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(login_router)
 app.include_router(callback_router)
+app.include_router(refresh_router)

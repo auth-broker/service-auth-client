@@ -3,17 +3,12 @@
 from typing import Annotated
 
 from ab_core.auth_client.oauth2.client import OAuth2Client
-from ab_core.auth_client.oauth2.client.pkce import PKCEOAuth2Client
-from ab_core.auth_client.oauth2.client.standard import StandardOAuth2Client
 from ab_core.auth_client.oauth2.schema.refresh import RefreshTokenRequest
 from ab_core.auth_client.oauth2.schema.token import OAuth2TokenExposed
-from ab_core.cache.caches.base import CacheAsyncSession
-from ab_core.cache.session_context import cache_session_async
 from ab_core.dependency import Depends
 from fastapi import APIRouter
-from fastapi import Depends as FDepends
 from fastapi.encoders import jsonable_encoder
-from pydantic import BaseModel, Field, SecretStr
+from pydantic import SecretStr
 
 router = APIRouter(prefix="/refresh", tags=["Auth"])
 
