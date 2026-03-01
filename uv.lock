@@ -4,7 +4,7 @@ requires-python = ">=3.12, <4"
 
 [[package]]
 name = "ab-auth-client"
-version = "0.1.14"
+version = "0.1.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
@@ -14,14 +14,14 @@ dependencies = [
     { name = "requests" },
     { name = "yarl" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/17/33/77ace512dd76f884325a5ec0adfc7da90a538c1e2fa1aff287fc21a19dc3/ab_auth_client-0.1.14.tar.gz", hash = "sha256:8955257ff44e8de1c79c2ca50ffb0e158fac0183ae80b7182201ba973c8ac996", size = 8715, upload-time = "2026-02-27T02:39:24.81Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/a2/fa8370f736cc26e862ca08695d8cdb0caab81e5740796adf3f00cb4383b0/ab_auth_client-0.1.15.tar.gz", hash = "sha256:84f5f4576cdf73e7681f798ac53044d263838a5886c9da35a91595b238da7550", size = 8729, upload-time = "2026-03-01T01:49:29.533Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c5/8c/963eacd6e4ab50b373e19871ffcb446c93db500d4552b23c7f4a67a274b0/ab_auth_client-0.1.14-py3-none-any.whl", hash = "sha256:49f3169e55a53f97ffa80f16457c0a22c673396ca35f3f0db6be43988d6143f1", size = 11967, upload-time = "2026-02-27T02:39:23.475Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/da/f5e8b0acb850584a25a69cdf1e04e4cd79deed64ef92a8921e423d58dd76/ab_auth_client-0.1.15-py3-none-any.whl", hash = "sha256:1be6dad68109309c3c21fbc6bb7c7f778819245fa59b163ab22345da78ad9d81", size = 11992, upload-time = "2026-03-01T01:49:28.194Z" },
 ]
 
 [[package]]
 name = "ab-auth-client-service"
-version = "0.3.1"
+version = "0.3.2"
 source = { editable = "." }
 dependencies = [
     { name = "ab-auth-client" },
@@ -47,7 +47,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ab-auth-client", specifier = ">=0.1.14,<0.2.0" },
+    { name = "ab-auth-client", specifier = ">=0.1.15,<0.2.0" },
     { name = "ab-cache", specifier = ">=0.1.9,<0.2.0" },
     { name = "ab-logging", specifier = ">=0.1.2,<0.2.0" },
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },

@@ -21,7 +21,7 @@ router = APIRouter(prefix="/login", tags=["Auth"])
 
 
 class LoginRequest(BaseModel):
-    scope: str = "openid email profile"
+    scope: str = "openid email profile offline_access"
     response_type: str = "code"
     identity_provider: str | None = "Google"
 
