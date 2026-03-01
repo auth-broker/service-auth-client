@@ -3,6 +3,7 @@
 from contextlib import asynccontextmanager
 from typing import Annotated
 
+from ab_core.cache.caches import Cache
 from ab_core.dependency import Depends, inject
 from ab_core.logging.config import LoggingConfig
 from fastapi import FastAPI
@@ -16,6 +17,7 @@ from ab_service.auth_client.routes.refresh import router as refresh_router
 @asynccontextmanager
 async def lifespan(
     _app: FastAPI,
+    _cache: Annotated[Cache, Depends(Cache, persist=True)],
     logging_config: Annotated[LoggingConfig, Depends(LoggingConfig, persist=True)],
 ):
     """Lifespan context manager to handle startup and shutdown events."""
